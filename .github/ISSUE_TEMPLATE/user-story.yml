@@ -1,0 +1,31 @@
+name: "User story"
+description: "As a <user>, I want <goal>, so that <value>."
+title: "[Story] "
+labels: ["type:story"]
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      description: Use “As a…, I want…, so that…”
+      placeholder: As a student, I want to register easily, so that I can attend DemonHacks.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ] Given I'm on Home, when I click Register, then I see the form in a new tab.
+        - [ ] Works on mobile and desktop.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / notes
+  - type: input
+    id: due
+    attributes:
+      label: Due date (optional)
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: ["area:design","area:content","area:dev","area:ops","area:sponsors"]

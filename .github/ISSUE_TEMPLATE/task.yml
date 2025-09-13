@@ -1,0 +1,19 @@
+name: "Task"
+description: "Atomic piece of work linked to a story or epic."
+title: "[Task] "
+labels: ["type:task"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Checklist
+      value: |
+        - [ ] 
+  - type: textarea
+    id: links
+    attributes:
+      label: Links / dependencies
