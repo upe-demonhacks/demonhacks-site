@@ -67,7 +67,7 @@ Definition of Done:
 ## Labels & milestones
 
 Labels (create in GitHub → Settings → Labels):
-- feature
+- story
 - task
 - bug
 - priority:high
