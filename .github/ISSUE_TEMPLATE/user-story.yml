@@ -1,7 +1,7 @@
 name: "User story"
 description: "As a <user>, I want <goal>, so that <value>."
 title: "[Story] "
-labels: ["type:story"]
+labels: ["feature"]
 body:
   - type: textarea
     id: story

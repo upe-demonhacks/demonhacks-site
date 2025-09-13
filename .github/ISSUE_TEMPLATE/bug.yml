@@ -1,7 +1,7 @@
 name: "Bug"
 description: "Something is broken or not meeting acceptance criteria."
 title: "[Bug] "
-labels: ["type:bug","priority:P1"]
+labels: ["bug","priority:high"]
 body:
   - type: input
     id: env

@@ -1,7 +1,7 @@
 name: "Task"
 description: "Atomic piece of work linked to a story or epic."
 title: "[Task] "
-labels: ["type:task"]
+labels: ["task"]
 body:
   - type: textarea
     id: summary
