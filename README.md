@@ -8,7 +8,7 @@ Work in Progress...
 - Astro 
 - React 
 - Deploy: Vercel
-- Forms: Google Forms (link or embed)
+- Forms: form provider (Google Forms or Tally) — link or embed
 - Assets: `public/` (served), `brand/` (editable/source)
 - Project management: GitHub Projects (Product Launch template), Issues, PRs
 
@@ -17,6 +17,17 @@ Work in Progress...
 - Node.js 20+
 - Git
 - npm (or pnpm/yarn)
+
+## Tech stack (Approval Pending)
+
+- Framework: Astro (static-first)
+- Styling: Tailwind CSS
+- Interactivity: Optional small React islands only if needed
+- Forms: Tally (embed on `/register`) — [tally.so/r/mORqVR](https://tally.so/r/mORqVR)
+- Content: `.astro` pages; can add Markdown/JSON later
+- Workflow: PRs to `main` with 1 review when available
+
+Why: fast by default (0 JS unless needed), simple pages with great SEO, and no backend to manage since Tally handles registration.
 
 ## Getting started
 
@@ -88,7 +99,7 @@ Labels (create in GitHub → Settings → Labels):
 
 - Do not commit secrets.
 - Store tokens/keys in Vercel project settings if needed.
-- Registration handled by Google Forms; site stores no sensitive data.
+- Registration handled by an external form provider; site stores no sensitive data.
 
 ## License
 
