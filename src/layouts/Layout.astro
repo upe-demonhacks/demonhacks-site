@@ -1,0 +1,44 @@
+---
+import '../styles/global.css'
+
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = "DemonHacks 2024 - DePaul University's Premier Hackathon", description = "Join us for 48 hours of coding, learning, and building the future at DePaul University's premier hackathon hosted by UPE." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="hackathon, DePaul University, UPE, coding, programming, innovation, tech, students" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/og-image.jpg" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="/og-image.jpg" />
+		
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		
+		<title>{title}</title>
+	</head>
+	<body class="font-sans bg-gray-950 text-white antialiased">
+		<slot />
+	</body>
+</html>

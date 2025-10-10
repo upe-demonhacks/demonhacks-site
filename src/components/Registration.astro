@@ -1,0 +1,149 @@
+---
+import { siteConfig } from '../data/site.ts';
+---
+
+<section id="register" class="py-20 bg-gradient-to-br from-indigo-900/20 via-gray-900 to-purple-900/20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to <span class="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Join Us?</span>
+      </h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Secure your spot at DemonHacks 2024. Registration is free and includes meals, swag, and access to all workshops and events.
+      </p>
+    </div>
+
+    <!-- Registration card -->
+    <div class="bg-gray-950/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-6">
+        <h3 class="text-2xl font-bold text-white text-center">Event Registration</h3>
+        <p class="text-indigo-100 text-center mt-2">Complete your registration in just a few clicks</p>
+      </div>
+
+      <!-- Content -->
+      <div class="p-8">
+        <!-- Key details -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
+            <h4 class="font-semibold text-white mb-2 flex items-center">
+              <svg class="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              When
+            </h4>
+            <p class="text-gray-300">{siteConfig.date}</p>
+          </div>
+          
+          <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
+            <h4 class="font-semibold text-white mb-2 flex items-center">
+              <svg class="w-5 h-5 text-purple-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              Where
+            </h4>
+            <p class="text-gray-300">{siteConfig.location}</p>
+          </div>
+        </div>
+
+        <!-- What's included -->
+        <div class="mb-8">
+          <h4 class="text-lg font-semibold text-white mb-4">What's Included</h4>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-300">All meals & snacks</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-300">Exclusive swag</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-300">Workshops & mentorship</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-300">Networking opportunities</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-300">Amazing prizes</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-300">Certificate of participation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded form placeholder -->
+        <div class="bg-gray-900/30 border-2 border-dashed border-gray-700 rounded-xl p-8 text-center mb-8">
+          <svg class="w-16 h-16 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          <h4 class="text-lg font-semibold text-white mb-2">Registration Form</h4>
+          <p class="text-gray-400 mb-4">The Tally registration form will be embedded here</p>
+          <p class="text-sm text-gray-500">Form URL: {siteConfig.registrationUrl}</p>
+        </div>
+
+        <!-- Direct link as fallback -->
+        <div class="text-center">
+          <a 
+            href={siteConfig.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-xl group"
+          >
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+            </svg>
+            Register Now
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <p class="text-gray-400 text-sm mt-4">
+            Registration closes on March 14, 2024 or when we reach capacity
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional info -->
+    <div class="text-center mt-8">
+      <p class="text-gray-400">
+        Questions about registration? 
+        <a href="mailto:deltaupe@cdm.depaul.edu" class="text-indigo-400 hover:text-indigo-300 transition-colors">
+          Contact us
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
