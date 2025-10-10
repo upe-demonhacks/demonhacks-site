@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+	{
+		question: 'Who can participate?',
+		answer: 'All students are welcome! Whether you\'re a beginner or experienced developer, DemonHacks is open to students of all skill levels and majors.'
+	},
+	{
+		question: 'How much does it cost?',
+		answer: 'Participation is completely free! We provide meals, snacks, swag, and an amazing experience at no cost to you.'
+	},
+	{
+		question: 'Do I need a team?',
+		answer: 'You can participate solo or form a team of up to 4 people. We\'ll also have team formation activities at the start of the event if you\'re looking for teammates.'
+	},
+	{
+		question: 'What should I bring?',
+		answer: 'Bring your laptop, charger, student ID, and enthusiasm! We\'ll provide everything else including food, drinks, and workspace.'
+	},
+	{
+		question: 'Is this beginner-friendly?',
+		answer: 'Absolutely! We\'ll have beginner-friendly workshops, mentors to help you, and resources for first-time hackers. This is a great place to learn and build your first project.'
+	},
+	{
+		question: 'Will there be hardware/APIs available?',
+		answer: 'Yes! We\'ll have hardware kits and API credits available on a first-come, first-served basis. Details will be shared closer to the event.'
+	},
+	{
+		question: 'How do I submit my project?',
+		answer: 'Projects will be submitted through Devpost. We\'ll share the submission link and guidelines at the event.'
+	},
+	{
+		question: 'What is your Code of Conduct?',
+		answer: 'We follow the MLH Code of Conduct to ensure a safe, inclusive, and harassment-free experience for everyone. All participants must agree to this when registering.'
+	},
+	{
+		question: 'Are there dietary accommodations?',
+		answer: 'Yes! We provide vegetarian, vegan, and halal options. Please indicate your dietary needs in the registration form.'
+	},
+	{
+		question: 'Is the venue accessible?',
+		answer: 'Yes, our venue is fully accessible. If you need specific accommodations, please contact us at deltaupe@cdm.depaul.edu.'
+	},
+	{
+		question: 'Will there be travel reimbursements?',
+		answer: 'Travel reimbursement details are still being finalized. Check back soon or join our updates list for announcements.'
+	},
+	{
+		question: 'Can I work on an existing project?',
+		answer: 'All projects must be started from scratch at the hackathon. You can use existing libraries, frameworks, and APIs, but the core project work must be done during the event.'
+	}
+];
+---
+
+<Layout 
+	title="FAQ — DemonHacks" 
+	description="Frequently asked questions about DemonHacks hackathon"
+>
+	<section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+		<h1 class="mb-4 text-center text-4xl font-bold">Frequently Asked Questions</h1>
+		<p class="mb-12 text-center text-lg text-gray-600">
+			Got questions? We've got answers. Can't find what you're looking for? 
+			<a href="mailto:deltaupe@cdm.depaul.edu" class="text-primary hover:underline">Contact us</a>.
+		</p>
+
+		<div class="space-y-6">
+			{faqs.map((faq) => (
+				<div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+					<h3 class="mb-3 text-lg font-semibold text-gray-900">{faq.question}</h3>
+					<p class="text-gray-700">{faq.answer}</p>
+				</div>
+			))}
+		</div>
+
+		<div class="mt-12 rounded-lg bg-primary/5 p-8 text-center">
+			<h2 class="mb-4 text-2xl font-bold">Still have questions?</h2>
+			<p class="mb-6 text-gray-700">We're here to help! Reach out to us anytime.</p>
+			<a
+				href="mailto:deltaupe@cdm.depaul.edu"
+				class="inline-block rounded-lg bg-primary px-6 py-3 font-semibold text-white shadow hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+			>
+				Contact Us
+			</a>
+		</div>
+	</section>
+</Layout>
+

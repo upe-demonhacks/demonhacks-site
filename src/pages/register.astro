@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const tallyFormId = 'mORqVR';
+const tallyUrl = `https://tally.so/r/${tallyFormId}?hideTitle=1&transparentBackground=1`;
+---
+
+<Layout 
+	title="Register — DemonHacks" 
+	description="Register for DemonHacks, UPE's first hackathon at DePaul University."
+>
+	<section class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+		<div class="mb-8 text-center">
+			<h1 class="mb-4 text-4xl font-bold">Register for DemonHacks</h1>
+			<p class="text-lg text-gray-600">
+				Fill out the form below to secure your spot. Registration is free!
+			</p>
+			<p class="mt-2 text-sm text-gray-500">
+				We collect only basic information via our external form provider. No sensitive data is stored on this site.
+			</p>
+		</div>
+
+		<div class="rounded-lg bg-white shadow-lg">
+			<iframe
+				data-tally-src={tallyUrl}
+				width="100%"
+				height="1000"
+				frameborder="0"
+				marginheight="0"
+				marginwidth="0"
+				title="DemonHacks Registration Form"
+				class="rounded-lg"
+			></iframe>
+
+			<script src="https://tally.so/widgets/embed.js"></script>
+			
+			<noscript>
+				<div class="p-8 text-center">
+					<p class="mb-4 text-gray-700">JavaScript is required to display the embedded form.</p>
+					<a 
+						href={`https://tally.so/r/${tallyFormId}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-block rounded-lg bg-primary px-6 py-3 text-white hover:bg-primary-dark"
+					>
+						Open Registration Form
+					</a>
+				</div>
+			</noscript>
+		</div>
+
+		<div class="mt-8 text-center text-sm text-gray-600">
+			<p>
+				Questions? Contact us at{' '}
+				<a href="mailto:deltaupe@cdm.depaul.edu" class="text-primary hover:underline">
+					deltaupe@cdm.depaul.edu
+				</a>
+			</p>
+		</div>
+	</section>
+</Layout>
+
