@@ -1,10 +1,16 @@
 ---
+import FloatingPowerups from "../components/FloatingPowerups.astro";
+import "../styles/animations.css";
+
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "UPE's first hackathon. Build, learn, and connect." } = Astro.props;
+const {
+	title,
+	description = "UPE's first hackathon. Build, learn, and connect.",
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -16,43 +22,101 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+
 		<!-- SEO -->
 		<title>{title}</title>
 		<link rel="canonical" href={canonicalURL} />
-		
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={new URL('/og.png', Astro.site)} />
-		
+		<meta property="og:image" content={new URL("/og.png", Astro.site)} />
+
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL('/og.png', Astro.site)} />
+		<meta
+			property="twitter:image"
+			content={new URL("/og.png", Astro.site)}
+		/>
 	</head>
-	<body class="min-h-screen bg-white text-gray-900 antialiased">
-		<header class="border-b border-gray-200">
+	<body
+		class="min-h-screen bg-white text-gray-900 antialiased relative overflow-x-hidden"
+	>
+		<!-- Floating Background Power-ups -->
+		<FloatingPowerups />
+
+		<header class="bg-primary border-b border-primary-dark relative z-10">
 			<nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div class="flex h-16 items-center justify-between">
-					<div class="flex items-center">
-						<a href="/" class="text-xl font-bold text-primary">DemonHacks</a>
+					<div class="flex items-center gap-3">
+						<div class="text-3xl">👹</div>
+						<a href="/" class="flex flex-col">
+							<span
+								class="text-lg font-bold text-white tracking-wide"
+								>DEMONHACKS</span
+							>
+							<span class="text-xs text-white/80 tracking-wider"
+								>DEPAUL UNIVERSITY</span
+							>
+						</a>
 					</div>
 					<div class="hidden space-x-8 md:flex">
-						<a href="/" class="text-gray-700 hover:text-primary">Home</a>
-						<a href="/register" class="text-gray-700 hover:text-primary">Register</a>
-						<a href="/faq" class="text-gray-700 hover:text-primary">FAQ</a>
-						<a href="/sponsors" class="text-gray-700 hover:text-primary">Sponsors</a>
-						<a href="/schedule" class="text-gray-700 hover:text-primary">Schedule</a>
+						<a
+							href="/"
+							class="text-white hover:text-orange font-medium transition"
+							>Home</a
+						>
+						<a
+							href="/register"
+							class="text-white hover:text-orange font-medium transition"
+							>Register</a
+						>
+						<a
+							href="/faq"
+							class="text-white hover:text-orange font-medium transition"
+							>FAQ</a
+						>
+						<a
+							href="/sponsors"
+							class="text-white hover:text-orange font-medium transition"
+							>Sponsors</a
+						>
+						<a
+							href="/schedule"
+							class="text-white hover:text-orange font-medium transition"
+							>Schedule</a
+						>
 					</div>
 					<div class="md:hidden">
-						<button type="button" class="text-gray-700 hover:text-primary" aria-label="Open menu">
-							<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+						<button
+							type="button"
+							class="text-white hover:text-orange"
+							aria-label="Open menu"
+						>
+							<svg
+								class="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 6h16M4 12h16M4 18h16"></path>
 							</svg>
 						</button>
 					</div>
@@ -64,34 +128,94 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			<slot />
 		</main>
 
-		<footer class="border-t border-gray-200 bg-gray-50">
+		<footer class="relative border-t border-gray-200 bg-gray-50">
+			<!-- Mario Brick Ground - CSS Based -->
+			<div class="w-full overflow-hidden" aria-hidden="true">
+				<div class="flex">
+					<div class="flex-shrink-0 flex">
+						{
+							Array.from({ length: 100 }).map(() => (
+								<div class="w-8 h-8 bg-amber-700 border border-amber-900 flex-shrink-0" />
+							))
+						}
+					</div>
+				</div>
+				<div class="flex" style="margin-left: -16px;">
+					<div class="flex-shrink-0 flex">
+						{
+							Array.from({ length: 100 }).map(() => (
+								<div class="w-8 h-8 bg-amber-700 border border-amber-900 flex-shrink-0" />
+							))
+						}
+					</div>
+				</div>
+			</div>
 			<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 				<div class="grid gap-8 md:grid-cols-3">
 					<div>
 						<h3 class="mb-4 text-lg font-semibold">DemonHacks</h3>
-						<p class="text-sm text-gray-600">UPE's first hackathon. Build, learn, and connect.</p>
+						<p class="text-sm text-gray-600">
+							UPE's first hackathon. Build, learn, and connect.
+						</p>
 					</div>
 					<div>
 						<h3 class="mb-4 text-lg font-semibold">Quick Links</h3>
 						<ul class="space-y-2 text-sm">
-							<li><a href="/register" class="text-gray-600 hover:text-primary">Register</a></li>
-							<li><a href="/faq" class="text-gray-600 hover:text-primary">FAQ</a></li>
-							<li><a href="/sponsors" class="text-gray-600 hover:text-primary">Sponsors</a></li>
-							<li><a href="/schedule" class="text-gray-600 hover:text-primary">Schedule</a></li>
+							<li>
+								<a
+									href="/register"
+									class="text-gray-600 hover:text-primary"
+									>Register</a
+								>
+							</li>
+							<li>
+								<a
+									href="/faq"
+									class="text-gray-600 hover:text-primary"
+									>FAQ</a
+								>
+							</li>
+							<li>
+								<a
+									href="/sponsors"
+									class="text-gray-600 hover:text-primary"
+									>Sponsors</a
+								>
+							</li>
+							<li>
+								<a
+									href="/schedule"
+									class="text-gray-600 hover:text-primary"
+									>Schedule</a
+								>
+							</li>
 						</ul>
 					</div>
 					<div>
 						<h3 class="mb-4 text-lg font-semibold">Contact</h3>
 						<p class="text-sm text-gray-600">
-							<a href="mailto:deltaupe@cdm.depaul.edu" class="hover:text-primary">deltaupe@cdm.depaul.edu</a>
+							<a
+								href="mailto:deltaupe@cdm.depaul.edu"
+								class="hover:text-primary"
+								>deltaupe@cdm.depaul.edu</a
+							>
 						</p>
 						<p class="mt-2 text-sm text-gray-600">
-							<a href="https://upe.cdm.depaul.edu/" target="_blank" rel="noopener" class="hover:text-primary">upe.cdm.depaul.edu</a>
+							<a
+								href="https://upe.cdm.depaul.edu/"
+								target="_blank"
+								rel="noopener"
+								class="hover:text-primary">upe.cdm.depaul.edu</a
+							>
 						</p>
 					</div>
 				</div>
-				<div class="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
-					<p>&copy; {new Date().getFullYear()} UPE DePaul. All rights reserved.</p>
+				<div
+					class="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-600"
+				>
+					<p>
+						&copy; {new Date().getFullYear()} UPE DePaul. All rights reserved.
+					</p>
 				</div>
 			</div>
 		</footer>

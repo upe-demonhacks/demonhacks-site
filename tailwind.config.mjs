@@ -4,8 +4,13 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#4F46E5', // Indigo - replace with your brand color
-				'primary-dark': '#4338CA',
+				primary: '#5B9FE3', // Retro blue from Figma
+				'primary-dark': '#4A8DD4',
+				orange: '#FF6B1A', // CTA orange from Figma
+				'orange-dark': '#E65A0A',
+			},
+			fontFamily: {
+				'retro': ['"Press Start 2P"', 'cursive'],
 			},
 		},
 	},
