@@ -1,0 +1,227 @@
+/* =================================
+   DEMONHACKS ANIMATION SYSTEM
+   ================================= */
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =================================
+   KEYFRAME ANIMATIONS
+   ================================= */
+
+/* Floating animation for power-ups */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Coin spin */
+@keyframes spin-coin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Pulse glow for buttons */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(255, 107, 26, 0.5),
+                0 0 20px rgba(255, 107, 26, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(255, 107, 26, 0.8),
+                0 0 40px rgba(255, 107, 26, 0.5);
+  }
+}
+
+/* Bounce in animation */
+@keyframes bounce-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Slide up with fade */
+@keyframes slide-up-fade {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Typewriter cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Question block bump */
+@keyframes block-bump {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-15px); }
+  50% { transform: translateY(0); }
+}
+
+/* Star sparkle */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Pipe emerge */
+@keyframes pipe-emerge {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+}
+
+/* Brick build */
+@keyframes brick-pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+/* =================================
+   ANIMATION UTILITY CLASSES
+   ================================= */
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-spin-coin {
+  animation: spin-coin 2s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up-fade 0.6s ease-out forwards;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.animate-pipe-emerge {
+  animation: pipe-emerge 0.8s ease-out forwards;
+}
+
+/* =================================
+   HOVER EFFECTS
+   ================================= */
+
+/* Button hover with glow */
+.btn-glow {
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 107, 26, 0.4);
+}
+
+.btn-glow:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Card 3D tilt effect */
+.card-tilt {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-5px);
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Link underline animation */
+.link-animated {
+  position: relative;
+}
+
+.link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link-animated:hover::after {
+  width: 100%;
+}
+
+/* Question block hover */
+.question-block:hover {
+  animation: block-bump 0.4s ease;
+}
+
+/* =================================
+   SCROLL REVEAL HELPERS
+   ================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grouped elements */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* =================================
+   SMOOTH SCROLL
+   ================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =================================
+   CURSOR EFFECTS (Optional)
+   ================================= */
+
+.cursor-pointer {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E👆%3C/text%3E%3C/svg%3E"), pointer;
+}

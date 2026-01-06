@@ -1,86 +1,551 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="DemonHacks — UPE Hackathon">
-	<section class="relative overflow-hidden bg-gradient-to-b from-primary/5 to-white">
-		<div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-			<div class="text-center">
-				<p class="mb-4 text-sm font-medium tracking-widest text-primary uppercase">UPE Presents</p>
-				<h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-					DemonHacks
-				</h1>
-				<p class="mx-auto mt-6 max-w-2xl text-xl text-gray-600">
-					Spring 2025 • DePaul University
-				</p>
-				<p class="mx-auto mt-4 max-w-3xl text-lg text-gray-600">
-					A student-run hackathon bringing together students to build projects, attend workshops, and connect with mentors and sponsors. All skill levels welcome!
-				</p>
-				<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-					<a
-						href="/register"
-						class="rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+	<!-- Hero Section -->
+	<section
+		class="relative overflow-hidden bg-primary"
+		style="min-height: 600px;"
+	>
+		<!-- Green Hills Background -->
+		<div
+			class="absolute bottom-20 left-0 w-full flex justify-around items-end pointer-events-none"
+			aria-hidden="true"
+		>
+			<div class="w-32 h-20 bg-green-500 rounded-t-full opacity-80"></div>
+			<div class="w-48 h-28 bg-green-500 rounded-t-full opacity-70"></div>
+			<div class="w-24 h-16 bg-green-500 rounded-t-full opacity-75"></div>
+			<div class="w-40 h-24 bg-green-500 rounded-t-full opacity-80"></div>
+			<div class="w-32 h-20 bg-green-500 rounded-t-full opacity-70"></div>
+		</div>
+
+		<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 relative z-10">
+			<div class="grid lg:grid-cols-2 gap-8 items-center">
+				<!-- Left Content with Blue Box -->
+				<div
+					class="bg-primary/80 backdrop-blur-sm rounded-lg p-8 border border-white/20 animate-slide-up"
+					style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;"
+				>
+					<p
+						class="mb-2 text-sm font-medium tracking-widest uppercase text-white/80"
 					>
-						Register Now
-					</a>
-					<a
-						href="/sponsors"
-						class="rounded-lg border-2 border-gray-300 px-8 py-4 text-lg font-semibold text-gray-900 transition hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+						UPE Presents
+					</p>
+					<h1
+						class="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl mb-6 text-white hero-title"
+						id="hero-title"
 					>
-						Become a Sponsor
-					</a>
+						Demonhacks
+					</h1>
+					<p class="text-lg mb-8 text-white/95">
+						A student-run hackathon bringing together students to
+						build projects, attend workshops, and connect with
+						mentors and sponsors. All skill levels welcome!
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<a
+							href="/register"
+							class="rounded-lg bg-orange px-6 py-3 text-base font-semibold text-white shadow-lg transition btn-glow animate-bounce-in animate-pulse-glow"
+							style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;"
+						>
+							Register now
+						</a>
+						<a
+							href="/sponsors"
+							class="rounded-lg bg-orange px-6 py-3 text-base font-semibold text-white shadow-lg transition btn-glow animate-bounce-in"
+							style="animation-delay: 0.8s; opacity: 0; animation-fill-mode: forwards;"
+						>
+							Become a sponsor
+						</a>
+					</div>
+				</div>
+
+				<!-- Right Content - Mascot -->
+				<div class="flex justify-center lg:justify-end">
+					<div class="bg-primary">
+						<img
+							src="/blue_demon_week_thumb_7.8.22.jpg"
+							alt="DePaul Blue Demon Mascot"
+							class="w-full max-w-sm h-auto rounded-lg"
+							style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mario Brick Ground - CSS Based -->
+		<div class="absolute bottom-0 w-full" aria-hidden="true">
+			<div class="brick-row flex">
+				{
+					Array.from({ length: 50 }).map((_, i) => (
+						<div class="w-12 h-8 bg-amber-700 border-2 border-amber-900 flex-shrink-0" />
+					))
+				}
+			</div>
+			<div class="brick-row flex" style="margin-left: -24px;">
+				{
+					Array.from({ length: 50 }).map((_, i) => (
+						<div class="w-12 h-8 bg-amber-700 border-2 border-amber-900 flex-shrink-0" />
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- What is DemonHacks Section -->
+	<section class="relative bg-primary py-20 overflow-hidden">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+			<h2 class="mb-6 text-2xl font-bold text-white">
+				What is DemonHacks
+			</h2>
+			<div class="max-w-2xl">
+				<p class="text-white/95 leading-relaxed">
+					DemonHacks is UPE's first hackathon at DePaul University.
+					Whether you're a beginner or experienced developer, join us
+					for a weekend of innovation, learning, and community
+					building.
+				</p>
+				<p class="text-white/95 leading-relaxed mt-4">
+					Work solo or in teams, attend workshops, connect with
+					industry mentors, and compete for prizes. Food, swag, and an
+					unforgettable experience included!
+				</p>
+			</div>
+		</div>
+
+		<!-- Green Pipes Decoration -->
+		<div
+			class="absolute bottom-0 right-0 flex items-end gap-16 pr-10"
+			aria-hidden="true"
+		>
+			<!-- Small Pipe -->
+			<div class="flex flex-col items-center">
+				<!-- Pipe Top -->
+				<div
+					class="w-20 h-6 bg-green-500 rounded-t-md border-2 border-green-700 relative"
+				>
+					<div class="absolute inset-0 flex">
+						<div class="w-1/4 h-full bg-green-400"></div>
+						<div class="w-1/2 h-full bg-green-500"></div>
+						<div class="w-1/4 h-full bg-green-600"></div>
+					</div>
+				</div>
+				<!-- Pipe Body -->
+				<div class="w-16 h-24 relative overflow-hidden">
+					<div class="absolute inset-0 flex">
+						<div class="w-1/4 h-full bg-green-400"></div>
+						<div class="w-1/2 h-full bg-green-500"></div>
+						<div class="w-1/4 h-full bg-green-600"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Large Pipe -->
+			<div class="flex flex-col items-center">
+				<!-- Pipe Top -->
+				<div
+					class="w-24 h-8 bg-green-500 rounded-t-md border-2 border-green-700 relative"
+				>
+					<div class="absolute inset-0 flex">
+						<div class="w-1/4 h-full bg-green-400"></div>
+						<div class="w-1/2 h-full bg-green-500"></div>
+						<div class="w-1/4 h-full bg-green-600"></div>
+					</div>
+				</div>
+				<!-- Pipe Body -->
+				<div class="w-20 h-48 relative overflow-hidden">
+					<div class="absolute inset-0 flex">
+						<div class="w-1/4 h-full bg-green-400"></div>
+						<div class="w-1/2 h-full bg-green-500"></div>
+						<div class="w-1/4 h-full bg-green-600"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-		<h2 class="mb-8 text-center text-3xl font-bold">What is DemonHacks?</h2>
-		<div class="mx-auto max-w-3xl text-center">
-			<p class="mb-6 text-lg text-gray-700">
-				DemonHacks is UPE's first hackathon at DePaul University. Whether you're a beginner or experienced developer, 
-				join us for a weekend of innovation, learning, and community building.
-			</p>
-			<p class="text-lg text-gray-700">
-				Work solo or in teams, attend workshops, connect with industry mentors, and compete for prizes. 
-				Food, swag, and an unforgettable experience included!
-			</p>
+	<!-- Quick Facts Section -->
+	<section class="relative bg-primary py-16 overflow-hidden">
+		<!-- Top decorative pipes -->
+		<div
+			class="absolute top-0 right-20 flex items-start gap-2"
+			aria-hidden="true"
+		>
+			<div class="w-12 h-8 bg-green-500 border-2 border-green-600"></div>
+			<div class="w-16 h-12 bg-green-500 border-2 border-green-600"></div>
 		</div>
-	</section>
 
-	<section class="bg-gray-50 py-16">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<h2 class="mb-12 text-center text-3xl font-bold">Quick Facts</h2>
+			<h2 class="mb-12 text-center text-2xl font-bold text-white">
+				Quick Facts
+			</h2>
 			<div class="grid gap-8 md:grid-cols-3">
-				<div class="rounded-lg bg-white p-6 text-center shadow">
-					<div class="mb-4 text-4xl">🚀</div>
-					<h3 class="mb-2 text-xl font-semibold">Build</h3>
-					<p class="text-gray-600">24 hours to create something amazing with your team</p>
+				<!-- Build Card -->
+				<div class="relative">
+					<div
+						class="absolute -top-8 left-1/2 -translate-x-1/2 text-5xl"
+					>
+						🚀
+					</div>
+					<div
+						class="relative bg-orange rounded-lg p-6 pt-10 text-center shadow-lg"
+					>
+						<!-- Corner brackets -->
+						<div
+							class="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-orange-dark/60"
+						>
+						</div>
+						<h3 class="mb-2 text-lg font-semibold text-white">
+							Build
+						</h3>
+						<p class="text-white/90 text-sm">
+							24 hours to create something amazing with your team.
+						</p>
+					</div>
 				</div>
-				<div class="rounded-lg bg-white p-6 text-center shadow">
-					<div class="mb-4 text-4xl">📚</div>
-					<h3 class="mb-2 text-xl font-semibold">Learn</h3>
-					<p class="text-gray-600">Workshops, mentors, and resources for all skill levels</p>
+
+				<!-- Learn Card -->
+				<div class="relative">
+					<div
+						class="absolute -top-8 left-1/2 -translate-x-1/2 text-5xl"
+					>
+						📚
+					</div>
+					<div
+						class="relative bg-orange rounded-lg p-6 pt-10 text-center shadow-lg"
+					>
+						<!-- Corner brackets -->
+						<div
+							class="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-orange-dark/60"
+						>
+						</div>
+						<h3 class="mb-2 text-lg font-semibold text-white">
+							Learn
+						</h3>
+						<p class="text-white/90 text-sm">
+							Workshops, mentors, and resources for all skill
+							levels
+						</p>
+					</div>
 				</div>
-				<div class="rounded-lg bg-white p-6 text-center shadow">
-					<div class="mb-4 text-4xl">🤝</div>
-					<h3 class="mb-2 text-xl font-semibold">Connect</h3>
-					<p class="text-gray-600">Network with students, mentors, and industry sponsors</p>
+
+				<!-- Connect Card -->
+				<div class="relative">
+					<div
+						class="absolute -top-8 left-1/2 -translate-x-1/2 text-5xl"
+					>
+						🤝
+					</div>
+					<div
+						class="relative bg-orange rounded-lg p-6 pt-10 text-center shadow-lg"
+					>
+						<!-- Corner brackets -->
+						<div
+							class="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-orange-dark/60"
+						>
+						</div>
+						<div
+							class="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-orange-dark/60"
+						>
+						</div>
+						<h3 class="mb-2 text-lg font-semibold text-white">
+							Connect
+						</h3>
+						<p class="text-white/90 text-sm">
+							Network with students, mentors, and industry
+							sponsors
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-		<div class="rounded-2xl bg-primary p-12 text-center text-white">
-			<h2 class="mb-4 text-3xl font-bold">Ready to hack?</h2>
-			<p class="mb-8 text-xl opacity-90">Registration opens soon. Be the first to know!</p>
+	<!-- Ready to Hack Section -->
+	<section class="relative bg-primary py-20 overflow-hidden">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="flex items-center gap-4 mb-4">
+				<h2
+					class="text-2xl md:text-3xl font-retro text-white tracking-wider"
+					style="text-shadow: 3px 3px 0px rgba(0,0,0,0.3);"
+				>
+					READY TO HACK?
+				</h2>
+				<!-- Koopa-style flying character using CSS -->
+				<div
+					class="text-4xl animate-bounce"
+					style="animation-duration: 1.5s;"
+				>
+					🐢
+				</div>
+			</div>
+			<p class="mb-6 text-lg text-white/90">
+				Registration opens soon. Be the first to know!
+			</p>
 			<a
 				href="/register"
-				class="inline-block rounded-lg bg-white px-8 py-4 text-lg font-semibold text-primary shadow-lg transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+				class="inline-block rounded-lg bg-orange px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-orange-dark border-2 border-orange-dark focus:outline-none"
 			>
-				Register Now
+				Register now
 			</a>
+		</div>
+
+		<!-- Mario-style brick decoration bottom right -->
+		<div
+			class="absolute bottom-0 right-10 flex items-end gap-0"
+			aria-hidden="true"
+		>
+			<!-- Bottom row of bricks -->
+			<div class="flex flex-col items-end">
+				<!-- Mushroom on top -->
+				<div class="text-3xl mb-1">🍄</div>
+				<!-- Question blocks and bricks -->
+				<div class="flex">
+					<div
+						class="w-10 h-10 bg-amber-600 border-2 border-amber-800 flex items-center justify-center text-amber-300 font-bold text-xl"
+					>
+						?
+					</div>
+					<div
+						class="w-10 h-10 bg-amber-600 border-2 border-amber-800 flex items-center justify-center text-amber-300 font-bold text-xl"
+					>
+						?
+					</div>
+				</div>
+				<div class="flex">
+					<div
+						class="w-10 h-10 bg-orange-800 border border-orange-900"
+					>
+					</div>
+					<div
+						class="w-10 h-10 bg-orange-800 border border-orange-900"
+					>
+					</div>
+					<div
+						class="w-10 h-10 bg-orange-800 border border-orange-900"
+					>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </Layout>
+
+<style>
+	.font-retro {
+		font-family: "Press Start 2P", cursive;
+	}
+
+	/* Typewriter cursor */
+	.typewriter-cursor {
+		display: inline-block;
+		width: 4px;
+		height: 1em;
+		background: white;
+		margin-left: 4px;
+		animation: blink 1s step-end infinite;
+	}
+
+	/* Card tilt interaction styles */
+	.card-interactive {
+		transition:
+			transform 0.2s ease-out,
+			box-shadow 0.2s ease-out;
+	}
+
+	/* Section fade-in from scroll */
+	.scroll-reveal {
+		opacity: 0;
+		transform: translateY(40px);
+		transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.scroll-reveal.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+</style>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	// Register GSAP plugins
+	gsap.registerPlugin(ScrollTrigger);
+
+	// Wait for DOM to be ready
+	document.addEventListener("DOMContentLoaded", () => {
+		// =================================
+		// TYPEWRITER EFFECT FOR HERO TITLE
+		// =================================
+		const heroTitle = document.getElementById("hero-title");
+		if (heroTitle) {
+			const text = heroTitle.textContent || "";
+			heroTitle.textContent = "";
+			heroTitle.style.opacity = "1";
+
+			let i = 0;
+			const typeWriter = () => {
+				if (i < text.length) {
+					heroTitle.textContent += text.charAt(i);
+					i++;
+					setTimeout(typeWriter, 100);
+				} else {
+					// Add cursor at the end
+					const cursor = document.createElement("span");
+					cursor.className = "typewriter-cursor";
+					heroTitle.appendChild(cursor);
+
+					// Remove cursor after 2 seconds
+					setTimeout(() => cursor.remove(), 2000);
+				}
+			};
+
+			// Start typewriter after a short delay
+			setTimeout(typeWriter, 500);
+		}
+
+		// =================================
+		// SCROLL-TRIGGERED ANIMATIONS
+		// =================================
+
+		// Animate sections as they scroll into view
+		const sections = document.querySelectorAll("section");
+		sections.forEach((section, index) => {
+			if (index > 0) {
+				// Skip hero section
+				gsap.fromTo(
+					section,
+					{ opacity: 0, y: 50 },
+					{
+						opacity: 1,
+						y: 0,
+						duration: 0.8,
+						ease: "power2.out",
+						scrollTrigger: {
+							trigger: section,
+							start: "top 80%",
+							toggleActions: "play none none none",
+						},
+					},
+				);
+			}
+		});
+
+		// Animate pipes rising
+		const pipes = document.querySelectorAll(
+			'.pipe-small, .pipe-large, [class*="pipe"]',
+		);
+		pipes.forEach((pipe, index) => {
+			gsap.fromTo(
+				pipe,
+				{ y: 100, opacity: 0 },
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.6,
+					delay: index * 0.15,
+					ease: "back.out(1.4)",
+					scrollTrigger: {
+						trigger: pipe,
+						start: "top 90%",
+						toggleActions: "play none none none",
+					},
+				},
+			);
+		});
+
+		// =================================
+		// CARD 3D TILT EFFECT
+		// =================================
+		const cards = document.querySelectorAll(".bg-orange.rounded-lg");
+		cards.forEach((card) => {
+			const htmlCard = card as HTMLElement;
+
+			htmlCard.addEventListener("mousemove", (e: Event) => {
+				const mouseEvent = e as MouseEvent;
+				const rect = htmlCard.getBoundingClientRect();
+				const x = mouseEvent.clientX - rect.left;
+				const y = mouseEvent.clientY - rect.top;
+				const centerX = rect.width / 2;
+				const centerY = rect.height / 2;
+				const rotateX = (y - centerY) / 10;
+				const rotateY = (centerX - x) / 10;
+
+				htmlCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+				htmlCard.style.boxShadow = "0 20px 40px rgba(0,0,0,0.2)";
+			});
+
+			htmlCard.addEventListener("mouseleave", () => {
+				htmlCard.style.transform =
+					"perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+				htmlCard.style.boxShadow = "";
+			});
+		});
+
+		// =================================
+		// QUESTION BLOCKS INTERACTION
+		// =================================
+		const questionBlocks = document.querySelectorAll('[class*="question"]');
+		questionBlocks.forEach((block) => {
+			block.addEventListener("click", () => {
+				gsap.to(block, {
+					y: -20,
+					duration: 0.15,
+					ease: "power2.out",
+					yoyo: true,
+					repeat: 1,
+				});
+			});
+		});
+
+		// =================================
+		// SMOOTH SCROLL FOR ANCHOR LINKS
+		// =================================
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener("click", (e) => {
+				e.preventDefault();
+				const href = anchor.getAttribute("href");
+				if (href) {
+					const target = document.querySelector(href);
+					if (target) {
+						target.scrollIntoView({ behavior: "smooth" });
+					}
+				}
+			});
+		});
+	});
+</script>
