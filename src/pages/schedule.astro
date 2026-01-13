@@ -30,11 +30,11 @@ const day2Schedule = [
 	title="Schedule — DemonHacks" 
 	description="DemonHacks event schedule - workshops, hacking, and awards"
 >
-	<section class="bg-gradient-to-b from-primary/5 to-white py-16">
+	<section class="bg-primary pt-16">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="text-center">
-				<h1 class="mb-4 text-4xl font-bold">Event Schedule</h1>
-				<p class="mx-auto max-w-2xl text-xl text-gray-600">
+				<h1 class="mb-4 text-4xl text-black font-bold">Event Schedule</h1>
+				<p class="mx-auto max-w-2xl text-xl text-white/90">
 					A packed weekend of workshops, hacking, and community. All times subject to change.
 				</p>
 			</div>
@@ -44,24 +44,24 @@ const day2Schedule = [
 	<section class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
 		<div class="mb-16">
 			<div class="mb-12 text-center">
-				<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white shadow-lg">
+				<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-bold text-primary shadow-lg">
 					1
 				</div>
-				<h2 class="text-3xl font-bold">Day 1 — Saturday</h2>
+				<h2 class="text-3xl text-white font-bold">Day 1 — Saturday</h2>
 			</div>
 
 			<!-- Vertical Timeline -->
 			<div class="relative">
 				<!-- Vertical Line -->
-				<div class="absolute left-8 top-0 bottom-0 w-1 bg-primary/30" aria-hidden="true"></div>
+				<div class="absolute left-8 top-0 bottom-0 w-1 bg-white/30" aria-hidden="true"></div>
 
 				<div class="space-y-8">
 					{day1Schedule.map((event, index) => (
-						<div class="relative flex items-start gap-6">
+						<div class="timeline-item relative flex items-start gap-6 animate-fade-up">
 							<!-- Timeline Dot -->
 							<div class="relative z-10 flex-shrink-0">
-								<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary shadow-lg">
-									<div class="h-4 w-4 rounded-full bg-white"></div>
+								<div class="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg">
+									<div class="h-4 w-4 rounded-full bg-primary"></div>
 								</div>
 							</div>
 
@@ -83,20 +83,20 @@ const day2Schedule = [
 
 		<div>
 			<div class="mb-12 text-center">
-				<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white shadow-lg">
+				<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-bold text-primary shadow-lg">
 					2
 				</div>
-				<h2 class="text-3xl font-bold">Day 2 — Sunday</h2>
+				<h2 class="text-3xl text-white font-bold">Day 2 — Sunday</h2>
 			</div>
 
 			<!-- Vertical Timeline -->
 			<div class="relative">
 				<!-- Vertical Line -->
-				<div class="absolute left-8 top-0 bottom-0 w-1 bg-primary/30" aria-hidden="true"></div>
+				<div class="absolute left-8 top-0 bottom-0 w-1 bg-white/30" aria-hidden="true"></div>
 
 				<div class="space-y-8">
 					{day2Schedule.map((event, index) => (
-						<div class="relative flex items-start gap-6">
+						<div class="timeline-item relative flex items-start gap-6 animate-fade-up">
 							<!-- Timeline Dot -->
 							<div class="relative z-10 flex-shrink-0">
 								<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary shadow-lg">
@@ -154,5 +154,22 @@ const day2Schedule = [
 			</div>
 		</div>
 	</section>
+	<script>
+		const items = document.querySelectorAll(".timeline-item");
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+				entry.target.classList.add("show");
+				observer.unobserve(entry.target);
+				}
+			});
+			},
+			{ threshold: 0.2 }
+		);
+
+		items.forEach((item) => observer.observe(item));
+	</script>
 </Layout>
 

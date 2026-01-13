@@ -1,119 +1,165 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import "../styles/animations.css";
 
 const tiers = [
 	{
-		name: 'Gold',
+		name: "Gold",
 		benefits: [
-			'Logo on website and materials',
-			'Keynote speaking opportunity',
-			'Dedicated workshop slot',
-			'Resume access',
-			'Swag distribution',
-			'Social media recognition'
-		]
+			"Logo on website and materials",
+			"Keynote speaking opportunity",
+			"Dedicated workshop slot",
+			"Resume access",
+			"Swag distribution",
+			"Social media recognition",
+		],
+		color: "text-yellow-400",
+		emoji: "🥇",
 	},
 	{
-		name: 'Silver',
+		name: "Silver",
 		benefits: [
-			'Logo on website and materials',
-			'Workshop slot',
-			'Resume access',
-			'Swag distribution',
-			'Social media recognition'
-		]
+			"Logo on website and materials",
+			"Workshop slot",
+			"Resume access",
+			"Swag distribution",
+			"Social media recognition",
+		],
+		color: "text-gray-300",
+		emoji: "🥈",
 	},
 	{
-		name: 'Bronze',
+		name: "Bronze",
 		benefits: [
-			'Logo on website',
-			'Swag distribution',
-			'Social media recognition'
-		]
-	}
+			"Logo on website",
+			"Swag distribution",
+			"Social media recognition",
+		],
+		color: "text-yellow-700",
+		emoji: "🥉",
+	},
 ];
 ---
 
-<Layout 
-	title="Sponsors — DemonHacks" 
+<Layout
+	title="Sponsors — DemonHacks"
 	description="Partner with DemonHacks to connect with talented students and support innovation"
 >
-	<section class="bg-gradient-to-b from-primary/5 to-white py-16">
+	<section class="bg-primary from-primary/5 to-white py-5 mt-16">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="text-center">
-				<h1 class="mb-4 text-4xl font-bold">Become a Sponsor</h1>
-				<p class="mx-auto max-w-2xl text-xl text-gray-600">
-					Partner with UPE to connect with talented students, showcase your brand, 
-					and support the next generation of innovators.
+				<h1 class="mb-4 text-4xl text-black font-bold">
+					Become a Sponsor
+				</h1>
+				<p class="mx-auto max-w-2xl text-xl text-white/80">
+					Partner with UPE and CSS from DePaul to connect with
+					talented students, showcase your brand, and support the next
+					generation of innovators.
 				</p>
 			</div>
 		</div>
 	</section>
 
 	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-		<h2 class="mb-12 text-center text-3xl font-bold">Sponsorship Tiers</h2>
+		<h2
+			class="mb-12 text-center text-3xl font-bold
+           bg-gradient-to-r from-yellow-300 via-white to-orange
+           bg-clip-text text-transparent animate-gradient-text"
+		>
+			Sponsorship Tiers
+		</h2>
+
 		<div class="grid gap-8 md:grid-cols-3">
-			{tiers.map((tier) => (
-				<div class="rounded-lg border-2 border-gray-200 bg-white p-8 shadow-sm transition hover:border-primary hover:shadow-lg">
-					<h3 class="mb-6 text-center text-2xl font-bold text-primary">{tier.name}</h3>
-					<ul class="space-y-3">
-						{tier.benefits.map((benefit) => (
-							<li class="flex items-start">
-								<svg class="mr-2 mt-1 h-5 w-5 flex-shrink-0 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-								</svg>
-								<span class="text-gray-700">{benefit}</span>
-							</li>
-						))}
-					</ul>
-				</div>
-			))}
+			{
+				tiers.map((tier) => (
+					<div class="bg-white/10 backdrop-blur-sm rounded-lg border-2 border-gray-200  p-8 shadow-sm transition hover:scale-105">
+						<h3
+							class={`mb-6 text-center text-2xl font-bold ${tier.color}`}
+						>
+							{tier.name} {tier.emoji}
+						</h3>
+						<ul class="space-y-3">
+							{tier.benefits.map((benefit) => (
+								<li class="flex items-start">
+									<svg
+										class="mr-2 mt-1 h-5 w-5 flex-shrink-0 text-green-500"
+										fill="currentColor"
+										viewBox="0 0 20 20"
+									>
+										<path
+											fill-rule="evenodd"
+											d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+											clip-rule="evenodd"
+										/>
+									</svg>
+									<span class="text-white/90">{benefit}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
 		</div>
 	</section>
 
 	<section class="bg-gray-50 py-16">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<h2 class="mb-8 text-center text-3xl font-bold">Why Sponsor DemonHacks?</h2>
+			<h2 class="mb-8 text-center text-3xl font-bold">
+				Why Sponsor DemonHacks?
+			</h2>
 			<div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-				<div class="rounded-lg bg-white p-6 shadow">
+				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
 					<div class="mb-4 text-4xl">🎯</div>
-					<h3 class="mb-3 text-xl font-semibold">Recruit Top Talent</h3>
+					<h3 class="mb-3 text-xl font-semibold">
+						Recruit Top Talent
+					</h3>
 					<p class="text-gray-600">
-						Connect directly with motivated students and identify potential interns and full-time hires.
+						Connect directly with motivated students and identify
+						potential interns and full-time hires.
 					</p>
 				</div>
-				<div class="rounded-lg bg-white p-6 shadow">
+				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
 					<div class="mb-4 text-4xl">📢</div>
 					<h3 class="mb-3 text-xl font-semibold">Brand Visibility</h3>
 					<p class="text-gray-600">
-						Get your brand in front of hundreds of students, faculty, and the broader DePaul community.
+						Get your brand in front of hundreds of students,
+						faculty, and the broader DePaul community.
 					</p>
 				</div>
-				<div class="rounded-lg bg-white p-6 shadow">
+				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
 					<div class="mb-4 text-4xl">💡</div>
-					<h3 class="mb-3 text-xl font-semibold">Support Innovation</h3>
+					<h3 class="mb-3 text-xl font-semibold">
+						Support Innovation
+					</h3>
 					<p class="text-gray-600">
-						Empower students to build creative solutions and explore new technologies.
+						Empower students to build creative solutions and explore
+						new technologies.
 					</p>
 				</div>
-				<div class="rounded-lg bg-white p-6 shadow">
+				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
 					<div class="mb-4 text-4xl">🤝</div>
 					<h3 class="mb-3 text-xl font-semibold">Community Impact</h3>
 					<p class="text-gray-600">
-						Show your commitment to education and give back to the tech community.
+						Show your commitment to education and give back to the
+						tech community.
 					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+	<section class="mx-auto px-4 pt-16 sm:px-6 lg:px-8">
 		<div class="rounded-2xl bg-primary p-12 text-center text-white">
-			<h2 class="mb-4 text-3xl font-bold">Interested in sponsoring?</h2>
+			<h2 class="mb-4 text-3xl font-bold text-black">
+				Interested in sponsoring?
+			</h2>
 			<p class="mb-8 text-xl opacity-90">
-				We'd love to hear from you! Download our prospectus or get in touch to discuss partnership opportunities.
+				We'd love to hear from you! Download our prospectus or get in
+				touch to discuss partnership opportunities.
 			</p>
-			<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<div
+				class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+			>
 				<a
 					href="mailto:deltaupe@cdm.depaul.edu?subject=DemonHacks Sponsorship Inquiry"
 					class="inline-block rounded-lg bg-white px-8 py-4 font-semibold text-primary shadow-lg transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
@@ -133,24 +179,35 @@ const tiers = [
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-		<h2 class="mb-8 text-center text-3xl font-bold">Our Sponsors</h2>
-		<p class="mb-8 text-center text-gray-600">Thank you to our amazing sponsors! (Logos coming soon)</p>
+	<section class="mx-auto px-4 pb-16 sm:px-6 lg:px-8">
+		<h2 class="mb-2 text-center text-3xl text-white font-bold">
+			Our Sponsors
+		</h2>
+		<p class="mb-8 text-center text-white/80">
+			Thank you to our amazing sponsors! (Logos coming soon)
+		</p>
 		<div class="grid gap-8 md:grid-cols-4">
 			<!-- Sponsor logos will go here -->
-			<div class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50">
+			<div
+				class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50"
+			>
 				<span class="text-sm text-gray-500">Gold Sponsor</span>
 			</div>
-			<div class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50">
+			<div
+				class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50"
+			>
 				<span class="text-sm text-gray-500">Gold Sponsor</span>
 			</div>
-			<div class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50">
+			<div
+				class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50"
+			>
 				<span class="text-sm text-gray-500">Silver Sponsor</span>
 			</div>
-			<div class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50">
+			<div
+				class="flex h-32 items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50"
+			>
 				<span class="text-sm text-gray-500">Bronze Sponsor</span>
 			</div>
 		</div>
 	</section>
 </Layout>
-
