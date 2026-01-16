@@ -177,6 +177,39 @@
   }
 }
 
+/* Moonwalk animation for walking demon */
+@keyframes moonwalk {
+  0% {
+    left: 0%;
+    transform: scaleX(1);
+  }
+
+  45% {
+    left: calc(100% - 64px);
+    transform: scaleX(1);
+  }
+
+  50% {
+    left: calc(100% - 64px);
+    transform: scaleX(-1);
+  }
+
+  95% {
+    left: 0%;
+    transform: scaleX(-1);
+  }
+
+  100% {
+    left: 0%;
+    transform: scaleX(1);
+  }
+}
+
+.walking-demon {
+  animation: moonwalk 8s linear infinite;
+  position: absolute;
+}
+
 /* =================================
    ANIMATION UTILITY CLASSES
    ================================= */
@@ -325,7 +358,7 @@ html {
 }
 
 
-.qFacts-card{
+.qFacts-card {
   border-top: 2px solid #fff;
   border-left: 2px solid #fff;
   border-right: 2px solid black;
@@ -334,7 +367,7 @@ html {
 }
 
 
-.top-left{
+.top-left {
   position: absolute;
   width: 6px;
   height: 6px;
@@ -344,7 +377,8 @@ html {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
-.top-right{
+
+.top-right {
   position: absolute;
   width: 6px;
   height: 6px;
@@ -354,7 +388,8 @@ html {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
-.bottom-left{
+
+.bottom-left {
   position: absolute;
   width: 6px;
   height: 6px;
@@ -364,7 +399,8 @@ html {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
-.bottom-right{
+
+.bottom-right {
   position: absolute;
   width: 6px;
   height: 6px;

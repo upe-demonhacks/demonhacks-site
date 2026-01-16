@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
 		class="relative overflow-hidden bg-primary flex items-center justify-center"
 		style="min-height: calc(95dvh - 50px);"
 	>
-		<!-- Green Hills Background -->
+		<!-- Green Hills Background (includes Dibs - baked into GIF) -->
 		<img
 			src="Hero_Background.gif"
 			alt=""
@@ -40,7 +40,9 @@ import Layout from "../layouts/Layout.astro";
 				</p>
 				<div class="flex flex-wrap gap-4">
 					<a
-						href="/register"
+						href="https://upe-depaul-hackathon-landing-page-production.up.railway.app/"
+						target="_blank"
+						rel="noopener noreferrer"
 						class="rounded-md bg-orange px-6 py-3 text-base font-semibold text-white shadow-lg transition btn-glow animate-bounce-in animate-pulse-glow w-full sm:w-auto text-center"
 						style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards; border: 3px solid black;"
 					>
@@ -77,6 +79,10 @@ import Layout from "../layouts/Layout.astro";
 					Work solo or in teams, attend workshops, connect with
 					industry mentors, and compete for prizes. Food, swag, and an
 					unforgettable experience included!
+				</p>
+				<p class="text-white/95 leading-relaxed mt-4">
+					<strong>Argonne National Laboratory</strong> mentors will be present
+					to guide teams and share their expertise!
 				</p>
 			</div>
 		</div>
@@ -240,190 +246,192 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</div>
 	</section>
-</Layout>
 
-<style>
-	.font-retro {
-		font-family: "Press Start 2P", cursive;
-	}
-
-	/* Typewriter cursor */
-	.typewriter-cursor {
-		display: inline-block;
-		width: 4px;
-		height: 1em;
-		background: white;
-		margin-left: 4px;
-		animation: blink 1s step-end infinite;
-	}
-
-	/* Card tilt interaction styles */
-	.card-interactive {
-		transition:
-			transform 0.2s ease-out,
-			box-shadow 0.2s ease-out;
-	}
-
-	/* Section fade-in from scroll */
-	.scroll-reveal {
-		opacity: 0;
-		transform: translateY(40px);
-		transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	.scroll-reveal.visible {
-		opacity: 1;
-		transform: translateY(0);
-	}
-</style>
-
-<script>
-	import { gsap } from "gsap";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-	// Register GSAP plugins
-	gsap.registerPlugin(ScrollTrigger);
-
-	// Wait for DOM to be ready
-	document.addEventListener("DOMContentLoaded", () => {
-		// =================================
-		// TYPEWRITER EFFECT FOR HERO TITLE
-		// =================================
-		const heroTitle = document.getElementById("hero-title");
-		if (heroTitle) {
-			const text = heroTitle.textContent || "";
-			heroTitle.textContent = "";
-			heroTitle.style.opacity = "1";
-
-			let i = 0;
-			const typeWriter = () => {
-				if (i < text.length) {
-					heroTitle.textContent += text.charAt(i);
-					i++;
-					setTimeout(typeWriter, 100);
-				} else {
-					// Add cursor at the end
-					const cursor = document.createElement("span");
-					cursor.className = "typewriter-cursor";
-					heroTitle.appendChild(cursor);
-
-					// Remove cursor after 2 seconds
-					setTimeout(() => cursor.remove(), 2000);
-				}
-			};
-
-			// Start typewriter after a short delay
-			setTimeout(typeWriter, 500);
+	<style>
+		.font-retro {
+			font-family: "Press Start 2P", cursive;
 		}
 
-		// =================================
-		// SCROLL-TRIGGERED ANIMATIONS
-		// =================================
+		/* Typewriter cursor */
+		.typewriter-cursor {
+			display: inline-block;
+			width: 4px;
+			height: 1em;
+			background: white;
+			margin-left: 4px;
+			animation: blink 1s step-end infinite;
+		}
 
-		// Animate sections as they scroll into view
-		const sections = document.querySelectorAll("section");
-		sections.forEach((section, index) => {
-			if (index > 0) {
-				// Skip hero section
+		/* Card tilt interaction styles */
+		.card-interactive {
+			transition:
+				transform 0.2s ease-out,
+				box-shadow 0.2s ease-out;
+		}
+
+		/* Section fade-in from scroll */
+		.scroll-reveal {
+			opacity: 0;
+			transform: translateY(40px);
+			transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		.scroll-reveal.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
+
+	<script>
+		import { gsap } from "gsap";
+		import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+		// Register GSAP plugins
+		gsap.registerPlugin(ScrollTrigger);
+
+		// Wait for DOM to be ready
+		document.addEventListener("DOMContentLoaded", () => {
+			// =================================
+			// TYPEWRITER EFFECT FOR HERO TITLE
+			// =================================
+			const heroTitle = document.getElementById("hero-title");
+			if (heroTitle) {
+				const text = heroTitle.textContent || "";
+				heroTitle.textContent = "";
+				heroTitle.style.opacity = "1";
+
+				let i = 0;
+				const typeWriter = () => {
+					if (i < text.length) {
+						heroTitle.textContent += text.charAt(i);
+						i++;
+						setTimeout(typeWriter, 100);
+					} else {
+						// Add cursor at the end
+						const cursor = document.createElement("span");
+						cursor.className = "typewriter-cursor";
+						heroTitle.appendChild(cursor);
+
+						// Remove cursor after 2 seconds
+						setTimeout(() => cursor.remove(), 2000);
+					}
+				};
+
+				// Start typewriter after a short delay
+				setTimeout(typeWriter, 500);
+			}
+
+			// =================================
+			// SCROLL-TRIGGERED ANIMATIONS
+			// =================================
+
+			// Animate sections as they scroll into view
+			const sections = document.querySelectorAll("section");
+			sections.forEach((section, index) => {
+				if (index > 0) {
+					// Skip hero section
+					gsap.fromTo(
+						section,
+						{ opacity: 0, y: 50 },
+						{
+							opacity: 1,
+							y: 0,
+							duration: 0.8,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: section,
+								start: "top 80%",
+								toggleActions: "play none none none",
+							},
+						},
+					);
+				}
+			});
+
+			// Animate pipes rising
+			const pipes = document.querySelectorAll(
+				'.pipe-small, .pipe-large, [class*="pipe"]',
+			);
+			pipes.forEach((pipe, index) => {
 				gsap.fromTo(
-					section,
-					{ opacity: 0, y: 50 },
+					pipe,
+					{ y: 100, opacity: 0 },
 					{
-						opacity: 1,
 						y: 0,
-						duration: 0.8,
-						ease: "power2.out",
+						opacity: 1,
+						duration: 0.6,
+						delay: index * 0.15,
+						ease: "back.out(1.4)",
 						scrollTrigger: {
-							trigger: section,
-							start: "top 80%",
+							trigger: pipe,
+							start: "top 90%",
 							toggleActions: "play none none none",
 						},
 					},
 				);
-			}
-		});
+			});
 
-		// Animate pipes rising
-		const pipes = document.querySelectorAll(
-			'.pipe-small, .pipe-large, [class*="pipe"]',
-		);
-		pipes.forEach((pipe, index) => {
-			gsap.fromTo(
-				pipe,
-				{ y: 100, opacity: 0 },
-				{
-					y: 0,
-					opacity: 1,
-					duration: 0.6,
-					delay: index * 0.15,
-					ease: "back.out(1.4)",
-					scrollTrigger: {
-						trigger: pipe,
-						start: "top 90%",
-						toggleActions: "play none none none",
-					},
-				},
+			// =================================
+			// CARD 3D TILT EFFECT
+			// =================================
+			const cards = document.querySelectorAll(".bg-orange.rounded-lg");
+			cards.forEach((card) => {
+				const htmlCard = card as HTMLElement;
+
+				htmlCard.addEventListener("mousemove", (e: Event) => {
+					const mouseEvent = e as MouseEvent;
+					const rect = htmlCard.getBoundingClientRect();
+					const x = mouseEvent.clientX - rect.left;
+					const y = mouseEvent.clientY - rect.top;
+					const centerX = rect.width / 2;
+					const centerY = rect.height / 2;
+					const rotateX = (y - centerY) / 10;
+					const rotateY = (centerX - x) / 10;
+
+					htmlCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+					htmlCard.style.boxShadow = "0 20px 40px rgba(0,0,0,0.2)";
+				});
+
+				htmlCard.addEventListener("mouseleave", () => {
+					htmlCard.style.transform =
+						"perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+					htmlCard.style.boxShadow = "";
+				});
+			});
+
+			// =================================
+			// QUESTION BLOCKS INTERACTION
+			// =================================
+			const questionBlocks = document.querySelectorAll(
+				'[class*="question"]',
 			);
-		});
-
-		// =================================
-		// CARD 3D TILT EFFECT
-		// =================================
-		const cards = document.querySelectorAll(".bg-orange.rounded-lg");
-		cards.forEach((card) => {
-			const htmlCard = card as HTMLElement;
-
-			htmlCard.addEventListener("mousemove", (e: Event) => {
-				const mouseEvent = e as MouseEvent;
-				const rect = htmlCard.getBoundingClientRect();
-				const x = mouseEvent.clientX - rect.left;
-				const y = mouseEvent.clientY - rect.top;
-				const centerX = rect.width / 2;
-				const centerY = rect.height / 2;
-				const rotateX = (y - centerY) / 10;
-				const rotateY = (centerX - x) / 10;
-
-				htmlCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-				htmlCard.style.boxShadow = "0 20px 40px rgba(0,0,0,0.2)";
+			questionBlocks.forEach((block) => {
+				block.addEventListener("click", () => {
+					gsap.to(block, {
+						y: -20,
+						duration: 0.15,
+						ease: "power2.out",
+						yoyo: true,
+						repeat: 1,
+					});
+				});
 			});
 
-			htmlCard.addEventListener("mouseleave", () => {
-				htmlCard.style.transform =
-					"perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
-				htmlCard.style.boxShadow = "";
-			});
-		});
-
-		// =================================
-		// QUESTION BLOCKS INTERACTION
-		// =================================
-		const questionBlocks = document.querySelectorAll('[class*="question"]');
-		questionBlocks.forEach((block) => {
-			block.addEventListener("click", () => {
-				gsap.to(block, {
-					y: -20,
-					duration: 0.15,
-					ease: "power2.out",
-					yoyo: true,
-					repeat: 1,
+			// =================================
+			// SMOOTH SCROLL FOR ANCHOR LINKS
+			// =================================
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", (e) => {
+					e.preventDefault();
+					const href = anchor.getAttribute("href");
+					if (href) {
+						const target = document.querySelector(href);
+						if (target) {
+							target.scrollIntoView({ behavior: "smooth" });
+						}
+					}
 				});
 			});
 		});
-
-		// =================================
-		// SMOOTH SCROLL FOR ANCHOR LINKS
-		// =================================
-		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-			anchor.addEventListener("click", (e) => {
-				e.preventDefault();
-				const href = anchor.getAttribute("href");
-				if (href) {
-					const target = document.querySelector(href);
-					if (target) {
-						target.scrollIntoView({ behavior: "smooth" });
-					}
-				}
-			});
-		});
-	});
-</script>
+	</script>
+</Layout>
