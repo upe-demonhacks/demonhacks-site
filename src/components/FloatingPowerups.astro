@@ -1,78 +1,88 @@
 ---
 // Floating Power-ups Background Component
-// Adds floating Mario-style elements to the background
+// Adds floating hackathon-themed elements to the background
 ---
 
 <div
     class="floating-powerups fixed inset-0 pointer-events-none overflow-hidden z-0"
     aria-hidden="true"
 >
-    <!-- Floating Coins -->
+    <!-- Floating Laptops -->
     <div
-        class="coin absolute text-4xl animate-float"
+        class="laptop absolute text-4xl animate-float"
         style="top: 15%; left: 10%;"
     >
-        🪙
+        💻
     </div>
     <div
-        class="coin absolute text-3xl animate-float-delayed"
+        class="laptop absolute text-3xl animate-float-delayed"
+        style="top: 55%; right: 8%;"
+    >
+        💻
+    </div>
+
+    <!-- Floating Coffee -->
+    <div
+        class="coffee absolute text-3xl animate-float"
         style="top: 25%; right: 15%;"
     >
-        🪙
+        ☕
     </div>
     <div
-        class="coin absolute text-2xl animate-float"
-        style="top: 60%; left: 5%; animation-delay: 0.5s;"
+        class="coffee absolute text-2xl animate-float-delayed"
+        style="top: 75%; left: 18%;"
     >
-        🪙
+        ☕
     </div>
 
-    <!-- Floating Stars -->
+    <!-- Floating Lightbulbs (Ideas) -->
     <div
-        class="star absolute text-3xl animate-sparkle"
+        class="idea absolute text-3xl animate-sparkle"
         style="top: 20%; left: 30%;"
     >
-        ⭐
+        💡
     </div>
+    <div
+        class="idea absolute text-4xl animate-sparkle"
+        style="top: 65%; right: 25%; animation-delay: 1s;"
+    >
+        💡
+    </div>
+
+    <!-- Floating Rockets -->
+    <div
+        class="rocket absolute text-3xl animate-float"
+        style="top: 35%; right: 5%; animation-delay: 1.5s;"
+    >
+        🚀
+    </div>
+    <div
+        class="rocket absolute text-2xl animate-float-delayed"
+        style="top: 80%; left: 8%;"
+    >
+        🚀
+    </div>
+
+    <!-- Code Brackets -->
+    <div
+        class="code absolute text-2xl animate-float"
+        style="top: 45%; left: 5%; animation-delay: 0.5s;"
+    >
+        {}
+    </div>
+
+    <!-- Stars (generic) -->
     <div
         class="star absolute text-2xl animate-sparkle"
-        style="top: 45%; right: 25%; animation-delay: 1s;"
+        style="top: 70%; right: 12%; animation-delay: 0.7s;"
     >
         ✨
-    </div>
-    <div
-        class="star absolute text-4xl animate-sparkle"
-        style="top: 70%; left: 20%; animation-delay: 0.7s;"
-    >
-        ⭐
-    </div>
-
-    <!-- Floating Mushrooms -->
-    <div
-        class="mushroom absolute text-3xl animate-float"
-        style="top: 35%; right: 8%; animation-delay: 1.5s;"
-    >
-        🍄
-    </div>
-    <div
-        class="mushroom absolute text-2xl animate-float-delayed"
-        style="top: 80%; left: 12%;"
-    >
-        🍄
-    </div>
-
-    <!-- Fire Flowers -->
-    <div
-        class="flower absolute text-3xl animate-float"
-        style="top: 50%; right: 5%; animation-delay: 2s;"
-    >
-        🌸
     </div>
 </div>
 
 <style>
     .floating-powerups > * {
-        opacity: 0.3;
+        opacity: 0.25;
         transition: opacity 0.3s ease;
     }
 
@@ -84,16 +94,24 @@
     }
 
     /* Different float speeds for variety */
-    .coin {
+    .laptop {
         animation-duration: 4s;
+    }
+    .coffee {
+        animation-duration: 5s;
+    }
+    .idea {
+        animation-duration: 3s;
+    }
+    .rocket {
+        animation-duration: 4.5s;
+    }
+    .code {
+        animation-duration: 6s;
+        font-family: monospace;
+        color: rgba(255, 255, 255, 0.6);
     }
     .star {
         animation-duration: 3s;
-    }
-    .mushroom {
-        animation-duration: 5s;
-    }
-    .flower {
-        animation-duration: 4.5s;
     }
 </style>
