@@ -48,155 +48,31 @@ const tiers = [
 	<section class="bg-primary from-primary/5 to-white py-5 mt-16">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="text-center">
-				<h1 class="mb-4 text-4xl text-black font-bold">
-					Become a Sponsor
-				</h1>
+				<h1 class="mb-4 text-4xl text-white font-bold">Our Sponsors</h1>
 				<p class="mx-auto max-w-2xl text-xl text-white/80">
-					Partner with UPE and CSS from DePaul to connect with
-					talented students, showcase your brand, and support the next
-					generation of innovators.
+					Thank you to our amazing sponsors and partners!
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-		<h2
-			class="mb-12 text-center text-3xl font-bold
-           bg-gradient-to-r from-yellow-300 via-white to-orange
-           bg-clip-text text-transparent animate-gradient-text"
-		>
-			Sponsorship Tiers
-		</h2>
-
-		<div class="grid gap-8 md:grid-cols-3">
-			{
-				tiers.map((tier) => (
-					<div class="bg-white/10 backdrop-blur-sm rounded-lg border-2 border-gray-200  p-8 shadow-sm transition hover:scale-105">
-						<h3
-							class={`mb-6 text-center text-2xl font-bold ${tier.color}`}
-						>
-							{tier.name} {tier.emoji}
-						</h3>
-						<ul class="space-y-3">
-							{tier.benefits.map((benefit) => (
-								<li class="flex items-start">
-									<svg
-										class="mr-2 mt-1 h-5 w-5 flex-shrink-0 text-green-500"
-										fill="currentColor"
-										viewBox="0 0 20 20"
-									>
-										<path
-											fill-rule="evenodd"
-											d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-											clip-rule="evenodd"
-										/>
-									</svg>
-									<span class="text-white/90">{benefit}</span>
-								</li>
-							))}
-						</ul>
-					</div>
-				))
-			}
-		</div>
-	</section>
-
-	<section class="bg-gray-50 py-16">
-		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<h2 class="mb-8 text-center text-3xl font-bold">
-				Why Sponsor DemonHacks?
-			</h2>
-			<div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
-					<div class="mb-4 text-4xl">🎯</div>
-					<h3 class="mb-3 text-xl font-semibold">
-						Recruit Top Talent
-					</h3>
-					<p class="text-gray-600">
-						Connect directly with motivated students and identify
-						potential interns and full-time hires.
-					</p>
-				</div>
-				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
-					<div class="mb-4 text-4xl">📢</div>
-					<h3 class="mb-3 text-xl font-semibold">Brand Visibility</h3>
-					<p class="text-gray-600">
-						Get your brand in front of hundreds of students,
-						faculty, and the broader DePaul community.
-					</p>
-				</div>
-				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
-					<div class="mb-4 text-4xl">💡</div>
-					<h3 class="mb-3 text-xl font-semibold">
-						Support Innovation
-					</h3>
-					<p class="text-gray-600">
-						Empower students to build creative solutions and explore
-						new technologies.
-					</p>
-				</div>
-				<div class="rounded-lg bg-white/10 backdrop-blur-sm p-6 shadow">
-					<div class="mb-4 text-4xl">🤝</div>
-					<h3 class="mb-3 text-xl font-semibold">Community Impact</h3>
-					<p class="text-gray-600">
-						Show your commitment to education and give back to the
-						tech community.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="mx-auto px-4 pt-16 sm:px-6 lg:px-8">
-		<div class="rounded-2xl bg-primary p-12 text-center text-white">
-			<h2 class="mb-4 text-3xl font-bold text-black">
-				Interested in sponsoring?
-			</h2>
-			<p class="mb-8 text-xl opacity-90">
-				We'd love to hear from you! Download our prospectus or get in
-				touch to discuss partnership opportunities.
-			</p>
-			<div
-				class="flex flex-col items-center justify-center gap-4 sm:flex-row"
-			>
-				<a
-					href="mailto:deltaupe@cdm.depaul.edu?subject=DemonHacks Sponsorship Inquiry"
-					class="inline-block rounded-lg bg-white px-8 py-4 font-semibold text-primary shadow-lg transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-				>
-					Email Us
-				</a>
-				<a
-					href="/prospectus.pdf"
-					class="inline-block rounded-lg border-2 border-white px-8 py-4 font-semibold text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-				>
-					Download Prospectus
-				</a>
-			</div>
-			<p class="mt-6 text-sm opacity-75">
-				(Prospectus coming soon - contact us for details)
-			</p>
-		</div>
-	</section>
-
-	<section class="mx-auto px-4 pb-16 sm:px-6 lg:px-8">
-		<h2 class="mb-2 text-center text-3xl text-white font-bold">
-			Our Sponsors
-		</h2>
-		<p class="mb-8 text-center text-white/80">
-			Thank you to our amazing sponsors and partners!
-		</p>
-
+	<!-- Our Sponsors Section - MOVED TO TOP -->
+	<section class="mx-auto px-4 py-16 sm:px-6 lg:px-8">
 		<!-- Sponsors Grid -->
 		<div class="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto mb-12">
 			<!-- Microsoft -->
 			<div
-				class="flex h-32 items-center justify-center rounded-lg border-2 border-yellow-400 bg-white shadow-lg"
+				class="flex flex-col h-40 items-center justify-center rounded-lg border-2 border-yellow-400 bg-white shadow-lg p-6 gap-3"
 			>
+				<img
+					src="/Microsoft_logo.svg.png"
+					alt="Microsoft"
+					class="h-16 object-contain"
+				/>
 				<div class="text-center">
-					<span class="text-2xl font-bold text-gray-800"
-						>Microsoft</span
-					>
+					<p class="text-lg font-bold text-gray-800">Microsoft</p>
+					<div class="h-4"></div>
+					<!-- Spacer to match CDM's subtitle height -->
 					<p class="text-sm text-yellow-600 font-semibold">
 						Gold Sponsor
 					</p>
@@ -204,14 +80,19 @@ const tiers = [
 			</div>
 			<!-- CDM -->
 			<div
-				class="flex h-32 items-center justify-center rounded-lg border-2 border-yellow-400 bg-white shadow-lg"
+				class="flex flex-col h-40 items-center justify-center rounded-lg border-2 border-yellow-400 bg-white shadow-lg p-6 gap-3"
 			>
+				<img
+					src="/depaul logo.webp"
+					alt="DePaul CDM"
+					class="h-16 object-contain"
+				/>
 				<div class="text-center">
-					<span class="text-2xl font-bold text-gray-800">CDM</span>
+					<p class="text-lg font-bold text-gray-800">CDM</p>
 					<p class="text-xs text-gray-600">
 						College of Computing & Digital Media
 					</p>
-					<p class="text-sm text-yellow-600 font-semibold">
+					<p class="text-sm text-yellow-600 font-semibold mt-1">
 						Gold Sponsor
 					</p>
 				</div>
@@ -241,6 +122,91 @@ const tiers = [
 			<p class="mt-4 text-center text-white/70 text-sm">
 				Argonne National Laboratory mentors will be present to guide
 				teams and share their expertise!
+			</p>
+		</div>
+	</section>
+
+	<!-- Sponsorship Tiers Image Section -->
+	<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+		<h2
+			class="mb-12 text-center text-3xl font-bold
+           bg-gradient-to-r from-yellow-300 via-white to-orange
+           bg-clip-text text-transparent animate-gradient-text"
+		>
+			Sponsorship Tiers
+		</h2>
+
+		<!-- Styled Image Container -->
+		<div class="relative max-w-4xl mx-auto">
+			<!-- Decorative background glow -->
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-yellow-400/20 via-orange/20 to-blue-400/20 blur-3xl rounded-3xl"
+			>
+			</div>
+
+			<!-- Image Card -->
+			<div
+				class="relative bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-yellow-400/20"
+			>
+				<!-- Top accent bar -->
+				<div
+					class="h-2 bg-gradient-to-r from-yellow-400 via-orange to-primary"
+				>
+				</div>
+
+				<img
+					src="/demonhacks sponsor tier.jpeg"
+					alt="DemonHacks Sponsorship Tiers - Diamond, Platinum, Gold, and Silver levels with benefits comparison"
+					class="w-full h-auto"
+				/>
+
+				<!-- Bottom accent bar -->
+				<div
+					class="h-2 bg-gradient-to-r from-primary via-orange to-yellow-400"
+				>
+				</div>
+			</div>
+
+			<!-- Floating corner decorations -->
+			<div
+				class="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full opacity-60 animate-pulse"
+			>
+			</div>
+			<div
+				class="absolute -bottom-4 -right-4 w-8 h-8 bg-orange rounded-full opacity-60 animate-pulse"
+				style="animation-delay: 0.5s;"
+			>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-primary py-16 text-white">
+		<div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+			<h2 class="mb-4 text-3xl font-bold">Become a Sponsor</h2>
+			<p class="mb-8 mx-auto max-w-2xl text-lg text-white/90">
+				Partner with UPE and CSS from DePaul to connect with talented
+				students, showcase your brand, and support the next generation
+				of innovators. Gain visibility, recruit top talent, and make a
+				lasting impact.
+			</p>
+			<div
+				class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+			>
+				<a
+					href="mailto:deltaupe@cdm.depaul.edu?subject=DemonHacks Sponsorship Inquiry"
+					class="inline-block rounded-lg bg-white px-8 py-4 font-semibold text-primary shadow-lg transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+				>
+					Email Us
+				</a>
+				<a
+					href="/prospectus.pdf"
+					class="inline-block rounded-lg border-2 border-white px-8 py-4 font-semibold text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+				>
+					Download Prospectus
+				</a>
+			</div>
+			<p class="mt-6 text-sm opacity-75">
+				(Prospectus coming soon - contact us for details)
 			</p>
 		</div>
 	</section>
