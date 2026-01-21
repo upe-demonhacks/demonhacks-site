@@ -90,11 +90,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 					class="text-black hover:text-orange font-medium transition"
 					>Sponsors</a
 				>
-				<a
+				<!-- <a
 					href="/schedule"
 					class="text-black hover:text-orange font-medium transition"
 					>Schedule</a
-				>
+				> -->
 			</div>
 			<nav
 				class="mx-auto max-w-7xl w-full flex sm:px-6 lg:px-8"
@@ -102,13 +102,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			>
 				<div class="flex h-16 items-center justify-between w-full">
 					<div class="flex items-center gap-2">
-						<div class="text-3xl">
+						<a href="/" class="flex items-center gap-3">
 							<img
 								src="/UPE-logo-2023-7-removebg-preview.png"
 								alt="UPE Logo"
-								class="h-[60px] w-auto"
+								class="h-[50px] w-auto"
 							/>
-						</div>
+							<div class="h-[50px] w-px bg-white/30"></div>
+							<img
+								src="/depaul-css-logo-full-11.png"
+								alt="CSS Logo"
+								class="h-[50px] w-auto"
+							/>
+						</a>
 						<a href="/" class="flex gap-0 flex-col">
 							<span
 								class="text-2xl text-white tracking-wide font-['Silkscreen']"
@@ -141,11 +147,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 							class="text-white hover:text-orange font-medium transition"
 							>Sponsors</a
 						>
-						<a
+						<!-- <a
 							href="/schedule"
 							class="text-white hover:text-orange font-medium transition"
 							>Schedule</a
-						>
+						> -->
 					</div>
 					<div class="md:hidden">
 						<button

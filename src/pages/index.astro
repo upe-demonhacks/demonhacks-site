@@ -8,15 +8,37 @@ import Layout from "../layouts/Layout.astro";
 		class="relative overflow-hidden bg-primary flex items-center justify-center"
 		style="min-height: calc(95dvh - 50px);"
 	>
-		<!-- Green Hills Background (includes Dibs - baked into GIF) -->
-		<img
-			src="Hero_Background.gif"
-			alt=""
-			class="absolute inset-0 w-full h-full contain hero-bg"
-		/>
+		<!-- Clean Video Background (Dibs removed) -->
+		<video
+			src="/Gif.mov"
+			autoplay
+			loop
+			muted
+			playsinline
+			class="absolute inset-0 w-full h-full object-cover hero-bg"
+			style="object-position: center bottom;"></video>
 
 		<!-- Hero Content -->
-		<div class="">
+		<div class="relative z-10">
+			<!-- Microsoft Sponsor Banner -->
+			<div
+				class="flex items-center justify-center mb-4 animate-slide-up"
+				style="animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards;"
+			>
+				<div
+					class="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center gap-3 shadow-lg"
+				>
+					<span class="text-sm font-medium text-gray-700"
+						>Proudly sponsored by</span
+					>
+					<img
+						src="/Microsoft_logo.svg.png"
+						alt="Microsoft"
+						class="h-6"
+					/>
+				</div>
+			</div>
+
 			<!-- Left Content with Blue Box -->
 			<div
 				class="p-8 animate-slide-up w-full sm:w-[70%]"
@@ -40,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
 				</p>
 				<div class="flex flex-wrap gap-4">
 					<a
-						href="https://register.demonhacks.org/"
+						href="https://upe-depaul-hackathon-landing-page-production.up.railway.app/"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="rounded-md bg-orange px-6 py-3 text-base font-semibold text-white shadow-lg transition btn-glow animate-bounce-in animate-pulse-glow w-full sm:w-auto text-center"
